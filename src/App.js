@@ -1,25 +1,25 @@
 import "./App.css";
-import Typewriter from "typewriter-effect";
+import Entropy from "./Assets/entropy.mp4";
 
 function App() {
   return (
     <div className='App'>
-      <Typewriter
-        onInit={(typewriter) => {
-          typewriter
-            .typeString("Entropy Labs")
-            .pauseFor(1000)
-            .deleteAll()
-            .typeString("Entropy Labs")
-            .pauseFor(1000)
-            .deleteAll()
-            .typeString("Entropy Labs")
-            .start();
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          width: "100%",
+          left: "50%",
+          top: "50%",
+          height: "100%",
+          objectFit: "cover",
+          transform: "translate(-50%, -50%)",
         }}
-      />
-      <div>
-        <h6>By Ishika Pareek and Ayush Jain</h6>
-      </div>
+      >
+        <source src={Entropy} type='video/mp4' />
+      </video>
     </div>
   );
 }
